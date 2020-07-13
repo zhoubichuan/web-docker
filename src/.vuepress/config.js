@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/docker/', // 部署站点的基础路径
+  base: '/Web-Docker/', // 部署站点的基础路径
   description: 'Docker相关知识点',
   locales: {
     // 默认标题
