@@ -123,7 +123,14 @@ module.exports = {
             '21'
           ],
           '/base/practice/': [
-            '1.docker', '2.Jenkins', '3.gitlab', 'vscode', 'test', 'prem', 'i18n'],
+            '1.docker',
+            '2.Jenkins',
+            '3.gitlab',
+            '4.mongodb',
+            '5.redis',
+            '6.mysql',
+            'i18n'
+          ],
           '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
           '/senior/npm/': [],
           '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
