@@ -60,11 +60,11 @@ module.exports = {
         nav: [{
           text: '基础知识',
           items: [{
-            text: '一.Docker基础',
+            text: '一.docker基础',
             link: '/base/build/1.index'
           },
           {
-            text: '二.docker相关实践',
+            text: '二.docker实践',
             link: '/base/practice/1.docker',
           }
           ]
