@@ -54,7 +54,7 @@ module.exports = {
       text: '基础知识',
       items: [{
         text: '一.docker基础',
-        link: '/base/build/1.index'
+        link: '/base/build/1.docker'
       },
       {
         text: '二.docker实践',
@@ -93,27 +93,27 @@ module.exports = {
     ],
     sidebar: {
       '/base/build/': [
-        '1.index',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-        '9',
-        '10',
+        '1.docker',
+        '2.env',
+        '3.image',
+        '4.net',
+        '5.data',
+        '6.container',
+        '7.dockerfile',
+        '8.share',
+        '9.dockerhub',
+        '10.desktop',
+        '11.compose',
+        '12.service',
+        '13.find',
         '11',
-        '12',
-        '13',
-        '14',
-        '15',
-        '16',
-        '17',
-        '18',
-        '19',
-        '20',
-        '21'
+        // '15',
+        // '16',
+        // '17',
+        // '18',
+        // '19',
+        // '20',
+        // '21'
       ],
       '/base/practice/': [
         '1.docker',
