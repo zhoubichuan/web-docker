@@ -54,7 +54,7 @@ module.exports = {
       text: '基础知识',
       items: [{
         text: '一.docker基础',
-        link: '/base/build/1.docker'
+        link: '/base/build/1.index'
       },
       {
         text: '二.docker实践',
