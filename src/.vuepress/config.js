@@ -52,47 +52,74 @@ module.exports = {
     lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
     nav: [{
       text: '基础知识',
-      items: [{
-        text: '一.docker基础',
-        link: '/base/build/1.index'
-      },
-      {
-        text: '二.docker实践',
-        link: '/base/practice/1.docker',
-      }
+      items: [
+        {
+          text: '一.桌面版实践',
+          link: '/base/1.desktop/1.index',
+        },
+        {
+          text: '二.命令实践',
+          link: '/base/2.practice/1.docker',
+        },
+        {
+          text: '三.Docker基础',
+          link: '/base/3.knowledge/1.index'
+        }
       ]
     },
     {
       text: '高级知识',
-      items: [{
-        text: '一.组件精讲',
-        link: '/senior/use/1.recursionAndDynamics'
-      },
-      {
-        text: '二.TypeScript',
-        link: '/senior/typeScript'
-      },
+      items: [
+        {
+          text: '一.组件精讲',
+          link: '/senior/use/1.recursionAndDynamics'
+        },
+        {
+          text: '二.TypeScript',
+          link: '/senior/typeScript'
+        },
       ]
     },
     {
       text: '源码知识',
-      items: [{
-        text: '1.vue源码解析',
-        link: '/source/vue/1.preparation'
-      },
-      {
-        text: '2.vuex源码解析',
-        link: '/source/vuex'
-      },
-      {
-        text: '3.vue-router源码解析',
-        link: '/source/vue-router'
-      },
+      items: [
+        {
+          text: '1.vue源码解析',
+          link: '/source/vue/1.preparation'
+        },
+        {
+          text: '2.vuex源码解析',
+          link: '/source/vuex'
+        },
+        {
+          text: '3.vue-router源码解析',
+          link: '/source/vue-router'
+        },
       ]
     }
     ],
     sidebar: {
-      '/base/build/': [
+      '/base/1.desktop/': [
+        '1.index',
+        '2.Jenkins',
+        '3.gitlab',
+        '4.mongodb',
+        '5.redis',
+        '6.mysql',
+        '7.node',
+        '8.express'
+      ],
+      '/base/2.practice/': [
+        '1.docker',
+        '2.Jenkins',
+        '3.gitlab',
+        '4.mongodb',
+        '5.redis',
+        '6.mysql',
+        '7.node',
+        '8.express'
+      ],
+      '/base/3.knowledge/': [
         '1.index',
         '1.env',
         '2.docker',
@@ -115,18 +142,29 @@ module.exports = {
         // '20',
         // '21'
       ],
-      '/base/practice/': [
-        '1.docker',
-        '2.Jenkins',
-        '3.gitlab',
-        '4.mongodb',
-        '5.redis',
-        '6.mysql',
-        '7.express'
+      '/senior/use/': [
+        '1.recursionAndDynamics',
+        '2.extend',
+        '3.componentCommunication',
+        '4.render',
+        '5.api',
+        '6.form',
+        '7.checkBox',
+        '8.active',
+        '9.alert',
+        '10.table',
+        '11.tree'
       ],
-      '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
-      '/senior/npm/': [],
-      '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+      '/source/vue/': [
+        '1.preparation',
+        '2.dataDriven',
+        '3.componentization',
+        '4.deepResponsePrinciple',
+        '5.compile',
+        '6.extend',
+        '7.vueRouter',
+        '8.vuex'
+      ],
     },
     searchMaxSuggestoins: 10
   },
