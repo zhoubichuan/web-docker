@@ -1,9 +1,9 @@
 ---
 lang: zh-CN
 home: true
-heroImage: "/home.png"
+heroImage: "/home.webp"
 actionText: 先睹为快 →
-actionLink: /base/build/1.config
+actionLink: /base/1.desktop/1.index
 pageClass: page_index
 footer: Docker相关知识
 meta:
