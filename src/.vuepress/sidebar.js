@@ -1,5 +1,5 @@
 const sidebar = {
-  "/base/1.desktop/": [
+  "/base/desktop/": [
     "1.index",
     "2.Jenkins",
     "3.gitlab",
@@ -9,8 +9,8 @@ const sidebar = {
     "7.node",
     "8.express",
   ],
-  "/base/2.practice/": [
-    "1.docker",
+  "/base/command/": [
+    "1.index",
     "2.Jenkins",
     "3.gitlab",
     "4.mongodb",
@@ -19,7 +19,7 @@ const sidebar = {
     "7.node",
     "8.express",
   ],
-  "/base/3.knowledge/": [
+  "/base/theory/": [
     "1.index",
     "1.env",
     "2.docker",
@@ -42,8 +42,8 @@ const sidebar = {
     // '20',
     // '21'
   ],
-  "/senior/use/": [
-    "1.recursionAndDynamics",
+  "/senior/vscode/": [
+    "1.index",
     "2.extend",
     "3.componentCommunication",
     "4.render",

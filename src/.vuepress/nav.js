@@ -4,27 +4,27 @@ const nav = [
     items: [
       {
         text: "一.桌面版实践",
-        link: "/base/1.desktop/1.index",
+        link: "/base/desktop/1.index",
       },
       {
         text: "二.命令实践",
-        link: "/base/2.practice/1.docker",
+        link: "/base/command/1.index",
       },
       {
-        text: "三.Docker基础",
-        link: "/base/3.knowledge/1.index",
+        text: "三.理论基础",
+        link: "/base/theory/1.index",
       },
     ],
   },
-  // {
-  //   text: '高级知识',
-  //   items: [
-  //     {
-  //       text: '一.组件精讲',
-  //       link: '/senior/use/1.recursionAndDynamics'
-  //     },
-  //   ]
-  // },
+  {
+    text: '高级知识',
+    items: [
+      {
+        text: '一.vscode结合',
+        link: '/senior/vscode/1.index'
+      },
+    ]
+  },
   // {
   //   text: '源码知识',
   //   items: [

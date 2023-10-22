@@ -3,7 +3,7 @@ lang: zh-CN
 home: true
 heroImage: "/home.webp"
 actionText: 先睹为快 →
-actionLink: /base/1.desktop/1.index
+actionLink: /base/desktop/1.index
 pageClass: page_index
 footer: Docker相关知识
 meta:
