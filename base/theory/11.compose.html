@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>十一.Docker Compose | Docker笔记</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-docker/assets/css/0.styles.d0ee7453.css" as="style"><link rel="preload" href="/web-docker/assets/js/app.fca22aa8.js" as="script"><link rel="preload" href="/web-docker/assets/js/2.8115ff36.js" as="script"><link rel="preload" href="/web-docker/assets/js/1.47cb7bd0.js" as="script"><link rel="preload" href="/web-docker/assets/js/43.5e9a6e89.js" as="script"><link rel="preload" href="/web-docker/assets/js/19.de37c8cf.js" as="script"><link rel="prefetch" href="/web-docker/assets/js/10.0d0249c0.js"><link rel="prefetch" href="/web-docker/assets/js/11.f0438f34.js"><link rel="prefetch" href="/web-docker/assets/js/12.ee450638.js"><link rel="prefetch" href="/web-docker/assets/js/13.04c2d882.js"><link rel="prefetch" href="/web-docker/assets/js/14.74b3cde4.js"><link rel="prefetch" href="/web-docker/assets/js/15.0c92c99b.js"><link rel="prefetch" href="/web-docker/assets/js/16.4e015c7f.js"><link rel="prefetch" href="/web-docker/assets/js/17.55765a99.js"><link rel="prefetch" href="/web-docker/assets/js/18.08fff6e3.js"><link rel="prefetch" href="/web-docker/assets/js/20.660ec8ac.js"><link rel="prefetch" href="/web-docker/assets/js/21.2927b130.js"><link rel="prefetch" href="/web-docker/assets/js/22.f5f0108a.js"><link rel="prefetch" href="/web-docker/assets/js/23.c2cb1fa7.js"><link rel="prefetch" href="/web-docker/assets/js/24.092b1983.js"><link rel="prefetch" href="/web-docker/assets/js/25.7508805d.js"><link rel="prefetch" href="/web-docker/assets/js/26.65b442b0.js"><link rel="prefetch" href="/web-docker/assets/js/27.c7d2d1e4.js"><link rel="prefetch" href="/web-docker/assets/js/28.3e92c6a7.js"><link rel="prefetch" href="/web-docker/assets/js/29.5f56bc0e.js"><link rel="prefetch" href="/web-docker/assets/js/3.174f56ff.js"><link rel="prefetch" href="/web-docker/assets/js/30.0499b401.js"><link rel="prefetch" href="/web-docker/assets/js/31.7f6287de.js"><link rel="prefetch" href="/web-docker/assets/js/32.2c9cdfab.js"><link rel="prefetch" href="/web-docker/assets/js/33.7ecd36da.js"><link rel="prefetch" href="/web-docker/assets/js/34.162fa78c.js"><link rel="prefetch" href="/web-docker/assets/js/35.353cfe44.js"><link rel="prefetch" href="/web-docker/assets/js/36.4e4cd81d.js"><link rel="prefetch" href="/web-docker/assets/js/37.1f27c76e.js"><link rel="prefetch" href="/web-docker/assets/js/38.dcf721e5.js"><link rel="prefetch" href="/web-docker/assets/js/39.0580f617.js"><link rel="prefetch" href="/web-docker/assets/js/4.fb0f15f1.js"><link rel="prefetch" href="/web-docker/assets/js/40.095832be.js"><link rel="prefetch" href="/web-docker/assets/js/41.80540810.js"><link rel="prefetch" href="/web-docker/assets/js/42.5318b314.js"><link rel="prefetch" href="/web-docker/assets/js/44.b11683f8.js"><link rel="prefetch" href="/web-docker/assets/js/45.e85648f5.js"><link rel="prefetch" href="/web-docker/assets/js/46.8d2add9c.js"><link rel="prefetch" href="/web-docker/assets/js/47.de3467a6.js"><link rel="prefetch" href="/web-docker/assets/js/48.09c6f6c5.js"><link rel="prefetch" href="/web-docker/assets/js/49.842f3995.js"><link rel="prefetch" href="/web-docker/assets/js/5.a052045d.js"><link rel="prefetch" href="/web-docker/assets/js/50.7a7867cd.js"><link rel="prefetch" href="/web-docker/assets/js/51.34f9e5c5.js"><link rel="prefetch" href="/web-docker/assets/js/52.526fc997.js"><link rel="prefetch" href="/web-docker/assets/js/53.e754a1b5.js"><link rel="prefetch" href="/web-docker/assets/js/54.70729d83.js"><link rel="prefetch" href="/web-docker/assets/js/55.ab4e3a3e.js"><link rel="prefetch" href="/web-docker/assets/js/56.59faef78.js"><link rel="prefetch" href="/web-docker/assets/js/57.4a69292d.js"><link rel="prefetch" href="/web-docker/assets/js/58.0522f0f0.js"><link rel="prefetch" href="/web-docker/assets/js/59.448564bc.js"><link rel="prefetch" href="/web-docker/assets/js/6.bcab73c8.js"><link rel="prefetch" href="/web-docker/assets/js/60.02b70898.js"><link rel="prefetch" href="/web-docker/assets/js/61.ccc336f1.js"><link rel="prefetch" href="/web-docker/assets/js/62.bd566f05.js"><link rel="prefetch" href="/web-docker/assets/js/63.db545d69.js"><link rel="prefetch" href="/web-docker/assets/js/64.a3dfb934.js"><link rel="prefetch" href="/web-docker/assets/js/65.91ef09bc.js"><link rel="prefetch" href="/web-docker/assets/js/66.7a177eb3.js"><link rel="prefetch" href="/web-docker/assets/js/67.ac1332a8.js"><link rel="prefetch" href="/web-docker/assets/js/68.58ddc385.js"><link rel="prefetch" href="/web-docker/assets/js/69.66ed2386.js"><link rel="prefetch" href="/web-docker/assets/js/7.787a2703.js"><link rel="prefetch" href="/web-docker/assets/js/70.5ab8eea2.js"><link rel="prefetch" href="/web-docker/assets/js/71.328d3bb2.js"><link rel="prefetch" href="/web-docker/assets/js/72.1db0602c.js"><link rel="prefetch" href="/web-docker/assets/js/73.53e12266.js"><link rel="prefetch" href="/web-docker/assets/js/74.42336ae3.js"><link rel="prefetch" href="/web-docker/assets/js/75.be9f0bc6.js"><link rel="prefetch" href="/web-docker/assets/js/76.d7d36f67.js"><link rel="prefetch" href="/web-docker/assets/js/77.84caa31c.js"><link rel="prefetch" href="/web-docker/assets/js/78.1307545b.js"><link rel="prefetch" href="/web-docker/assets/js/79.ae276f12.js"><link rel="prefetch" href="/web-docker/assets/js/80.cca0f3cd.js"><link rel="prefetch" href="/web-docker/assets/js/vendors~docsearch.7ba7f3db.js">
+    <link rel="stylesheet" href="/web-docker/assets/css/0.styles.d0ee7453.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-docker/" class="home-link router-link-active"><!----> <span class="site-name">Docker笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/base/desktop/1.index.html" class="nav-link">
+  一.桌面版实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/command/1.index.html" class="nav-link">
+  二.命令实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/theory/1.index.html" class="nav-link">
+  三.理论基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级知识" class="dropdown-title"><span class="title">高级知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级知识" class="mobile-dropdown-title"><span class="title">高级知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/senior/vscode/1.index.html" class="nav-link">
+  一.vscode结合
+</a></li></ul></div></div> <a href="https://github.com/zhoubichuan/web-docker" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/base/desktop/1.index.html" class="nav-link">
+  一.桌面版实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/command/1.index.html" class="nav-link">
+  二.命令实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/theory/1.index.html" class="nav-link">
+  三.理论基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级知识" class="dropdown-title"><span class="title">高级知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级知识" class="mobile-dropdown-title"><span class="title">高级知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/senior/vscode/1.index.html" class="nav-link">
+  一.vscode结合
+</a></li></ul></div></div> <a href="https://github.com/zhoubichuan/web-docker" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/web-docker/base/theory/1.index.html" class="sidebar-link">Docker 基础</a></li><li><a href="/web-docker/base/theory/1.env.html" class="sidebar-link">一.搭建环境</a></li><li><a href="/web-docker/base/theory/2.docker.html" class="sidebar-link">二.核心组成</a></li><li><a href="/web-docker/base/theory/3.image.html" class="sidebar-link">三.镜像与容器</a></li><li><a href="/web-docker/base/theory/4.net.html" class="sidebar-link">四.网络</a></li><li><a href="/web-docker/base/theory/5.file.html" class="sidebar-link">五.文件系统</a></li><li><a href="/web-docker/base/theory/6.container.html" class="sidebar-link">六.运行和管理容器</a></li><li><a href="/web-docker/base/theory/7.dockerfile.html" class="sidebar-link">七.Dockerfile</a></li><li><a href="/web-docker/base/theory/8.share.html" class="sidebar-link">八.保存和共享镜像</a></li><li><a href="/web-docker/base/theory/9.dockerhub.html" class="sidebar-link">九.Docker Hub</a></li><li><a href="/web-docker/base/theory/10.desktop.html" class="sidebar-link">十.Docker Desktop</a></li><li><a href="/web-docker/base/theory/11.compose.html" aria-current="page" class="active sidebar-link">十一.Docker Compose</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-安装使用" class="sidebar-link">1.安装使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-1-安装-docker-compose" class="sidebar-link">1.1 安装 Docker Compose</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-2-使用逻辑" class="sidebar-link">1.2 使用逻辑</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-3-编写配置" class="sidebar-link">1.3 编写配置</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-4-启动和停止" class="sidebar-link">1.4 启动和停止</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_1-5-容器命令" class="sidebar-link">1.5 容器命令</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-常用配置" class="sidebar-link">2.常用配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-1-定义服务" class="sidebar-link">2.1 定义服务</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-2-指定镜像" class="sidebar-link">2.2 指定镜像</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-3-依赖声明" class="sidebar-link">2.3 依赖声明</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-4-文件挂载" class="sidebar-link">2.4 文件挂载</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-5-使用数据卷" class="sidebar-link">2.5 使用数据卷</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-6-配置网络" class="sidebar-link">2.6 配置网络</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-7-使用网络别名" class="sidebar-link">2.7 使用网络别名</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_2-8-端口映射" class="sidebar-link">2.8 端口映射</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-编写项目" class="sidebar-link">3.编写项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-1-设计目录结构" class="sidebar-link">3.1 设计目录结构</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-2-编写配置文件" class="sidebar-link">3.2 编写配置文件</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-3-自定义镜像" class="sidebar-link">3.3 自定义镜像</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-4-目录挂载" class="sidebar-link">3.4 目录挂载</a></li><li class="sidebar-sub-header"><a href="/web-docker/base/theory/11.compose.html#_3-5-编写辅助脚本" class="sidebar-link">3.5 编写辅助脚本</a></li></ul></li></ul></li><li><a href="/web-docker/base/theory/12.service.html" class="sidebar-link">十二.服务化开发</a></li><li><a href="/web-docker/base/theory/13.find.html" class="sidebar-link">十三.服务发现</a></li><li><a href="/web-docker/base/theory/14.java.html" class="sidebar-link">十四.搭建 Java Web 环境</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="十一-docker-compose"><a href="#十一-docker-compose" class="header-anchor">#</a> 十一.Docker Compose</h1> <h3 id="解决容器管理问题"><a href="#解决容器管理问题" class="header-anchor">#</a> 解决容器管理问题</h3> <p>如果我们要为我们的应用容器准备一个 MySQL 容器和一个 Redis 容器，那么在每次启动时，我们先要将 MySQL 容器和 Redis 容器启动起来，再将应用容器运行起来。这其中还不要忘了在创建应用容器时将容器网络连接到 MySQL 容器和 Redis 容器上，以便应用连接上它们并进行数据交换。</p> <p>这还不够，如果我们还对容器进行了各种配置，我们最好还得将容器创建和配置的命令保存下来，以便下次可以直接使用。</p> <p>如果我们要想让这套体系像 <code>docker run</code> 和 <code>docker rm</code> 那样自如的进行无痕切换，那就更加麻烦了，我们可能需要编写一些脚本才能不至于被绕到命令的毛线球里。</p> <p>说了这么多，其实核心还是缺少一个对容器组合进行管理的东西。</p> <h3 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose</h3> <p>针对这种情况，我们就不得不引出在我们开发中最常使用的多容器定义和运行软件，也就是 Docker Compose 了。</p> <p>如果说 Dockerfile 是将容器内运行环境的搭建固化下来，那么 Docker Compose 我们就可以理解为将多个容器运行的方式和配置固化下来。</p> <p>在 Docker Compose 里，我们通过一个配置文件，将所有与应用系统相关的软件及它们对应的容器进行配置，之后使用 Docker Compose 提供的命令进行启动，就能让 Docker Compose 将刚才我们所提到的那些复杂问题解决掉。</p> <h2 id="_1-安装使用"><a href="#_1-安装使用" class="header-anchor">#</a> 1.安装使用</h2> <h3 id="_1-1-安装-docker-compose"><a href="#_1-1-安装-docker-compose" class="header-anchor">#</a> 1.1 安装 Docker Compose</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token string">&quot;https://github.com/docker/compose/releases/download/1.22.0/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> <span class="token parameter variable">-s</span><span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> <span class="token parameter variable">-m</span><span class="token variable">)</span></span>&quot;</span> <span class="token parameter variable">-o</span> /usr/local/bin/docker-compose
+<span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+$
+<span class="token function">docker-compose</span> version
+<span class="token function">docker-compose</span> version <span class="token number">1.21</span>.2, build a133471
+docker-py version: <span class="token number">3.3</span>.0
+CPython version: <span class="token number">3.6</span>.5
+OpenSSL version: OpenSSL <span class="token number">1.0</span>.1t  <span class="token number">3</span> May <span class="token number">2016</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>我们也能够通过 Python 的包管理工具 pip 来安装 Docker Compose。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>pip <span class="token function">install</span> <span class="token function">docker-compose</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block warning"><p class="custom-block-title">在 Windows 和 macOS 亦或是 Docker Toolbox 中使用 Docker Compose</p> <p>可以直接使用 <code>docker-compose</code> 这个命令，这三款软件都已经将 Docker Compose 内置在其中，供我们使用</p></div> <h3 id="_1-2-使用逻辑"><a href="#_1-2-使用逻辑" class="header-anchor">#</a> 1.2 使用逻辑</h3> <p>如果将使用 Docker Compose 的步骤简化来说，可以分成三步。</p> <ol><li>如果需要的话，编写容器所需镜像的 Dockerfile；( 也可以使用现有的镜像 )</li> <li>编写用于配置容器的 docker-compose.yml；</li> <li>使用 docker-compose 命令启动应用。</li></ol> <p>准备镜像这一过程我们之前已经掌握了，这里我们就简单来看看后面两个步骤。</p> <h3 id="_1-3-编写配置"><a href="#_1-3-编写配置" class="header-anchor">#</a> 1.3 编写配置</h3> <p>Docker Compose 的配置文件是一个基于 <a href="http://yaml.org/" target="_blank" rel="noopener noreferrer">YAML<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 格式的文件。</p> <p>与 Dockerfile 采用 Dockerfile 这个名字作为镜像构建定义的默认文件名一样，Docker Compose 的配置文件也有一个缺省的文件名，也就是 docker-compose.yml，如非必要，建议直接使用这个文件名来做 Docker Compose 项目的定义。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>version: <span class="token string">'3'</span> <span class="token comment"># 采用的版本，目前 Docker Compose 的配置文件已经迭代至了第三版，建议使用最新的版本来定义</span>
+
+services:
+
+  webapp:
+    build: ./image/webapp
+    ports:
+      - <span class="token string">&quot;5000:5000&quot;</span>
+    volumes:
+      - ./code:/code
+      - logvolume:/var/log
+    links:
+      - mysql
+      - redis
+
+  redis:
+    image: redis:3.2
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>my-secret-pw
+
+volumes:
+  logvolume: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>Docker Compose 配置文件里可以包含许多内容，从每个容器的各个细节控制，到网络、数据卷等的定义。</p> <p>接下来我们来看 services 这块，这是整个 docker-compose.yml 的核心部分，其定义了容器的各项细节。</p> <p>在 Docker Compose 里不直接体现容器这个概念，这是把 service 作为配置的最小单元。虽然我们看上去每个 service 里的配置内容就像是在配置容器，但其实 service 代表的是一个应用集群的配置。每个 service 定义的内容，可以通过特定的配置进行水平扩充，将同样的容器复制数份形成一个容器集群。而 Docker Compose 能够对这个集群做到黑盒效果，让其他的应用和容器无法感知它们的具体结构。</p> <h3 id="_1-4-启动和停止"><a href="#_1-4-启动和停止" class="header-anchor">#</a> 1.4 启动和停止</h3> <p>对于开发来说，最常使用的 Docker Compose 命令就是 <code>docker-compose up</code> 和 <code>docker-compose down</code> 了。</p> <p><code>docker-compose up</code> 命令类似于 Docker Engine 中的 <code>docker run</code>，它会根据 docker-compose.yml 中配置的内容，创建所有的容器、网络、数据卷等等内容，并将它们启动。与 <code>docker run</code> 一样，默认情况下 <code>docker-compose up</code> 会在“前台”运行，我们可以用 <code>-d</code> 选项使其“后台”运行。事实上，我们大多数情况都会加上 <code>-d</code> 选项。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>需要注意的是，<code>docker-compose</code> 命令默认会识别当前控制台所在目录内的 docker-compose.yml 文件，而会以这个目录的名字作为组装的应用项目的名称。如果我们需要改变它们，可以通过选项 <code>-f</code> 来修改识别的 Docker Compose 配置文件，通过 <code>-p</code> 选项来定义项目名。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> ./compose/docker-compose.yml <span class="token parameter variable">-p</span> myapp up <span class="token parameter variable">-d</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>与 <code>docker-compose up</code> 相反，<code>docker-compose down</code> 命令用于停止所有的容器，并将它们删除，同时消除网络等配置内容，也就是几乎将这个 Docker Compose 项目的所有影响从 Docker 中清除。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> down
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果条件允许，我更建议大家像容器使用一样对待 Docker Compose 项目，做到随用随启，随停随删。也就是使用的时候通过 <code>docker-compose up</code> 进行，而短时间内不再需要时，通过 <code>docker-compose down</code> 清理它。</p> <p>借助 Docker 容器的秒级启动和停止特性，我们在使用 <code>docker-compose up</code> 和 <code>docker-compose down</code> 时可以非常快的完成操作。这就意味着，我们可以在不到半分钟的时间内停止一套环境，切换到另外一套环境，这对于经常进行多个项目开发的朋友来说，绝对是福音。</p> <p>通过 Docker 让我们能够在开发过程中搭建一套不受干扰的独立环境，让开发过程能够基于稳定的环境下进行。而 Docker Compose 则让我们更近一步，同时让我们处理好多套开发环境，并进行快速切换。</p> <h3 id="_1-5-容器命令"><a href="#_1-5-容器命令" class="header-anchor">#</a> 1.5 容器命令</h3> <p>除了启动和停止命令外，Docker Compose 还为我们提供了很多直接操作服务的命令。之前我们说了，服务可以看成是一组相同容器的集合，所以操作服务就有点像操作容器一样。</p> <p>这些命令看上去都和 Docker Engine 中对单个容器进行操作的命令类似，我们来看几个常见的。</p> <p>在 Docker Engine 中，如果我们想要查看容器中主进程的输出内容，可以使用 <code>docker logs</code> 命令。而由于在 Docker Compose 下运行的服务，其命名都是由 Docker Compose 自动完成的，如果我们直接使用 <code>docker logs</code> 就需要先找到容器的名字，这显然有些麻烦了。我们可以直接使用 <code>docker-compose logs</code> 命令来完成这项工作。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> logs nginx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在 <code>docker-compose logs</code> 衔接的是 Docker Compose 中所定义的服务的名称。</p> <p>同理，在 Docker Compose 还有几个类似的命令可以单独控制某个或某些服务。</p> <p>通过 <code>docker-compose create</code>，<code>docker-compose start</code> 和 <code>docker-compose stop</code> 我们可以实现与 <code>docker create</code>，<code>docker start</code> 和 <code>docker stop</code> 相似的效果，只不过操作的对象由 Docker Engine 中的容器变为了 Docker Compose 中的服务。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> create webapp
+<span class="token function">docker-compose</span> start webapp
+<span class="token function">docker-compose</span> stop webapp
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_2-常用配置"><a href="#_2-常用配置" class="header-anchor">#</a> 2.常用配置</h2> <p>编写 Docker Compose 配置文件，其本质就是根据我们所设计的应用架构，对不同应用容器进行配置并加以组合</p> <h3 id="_2-1-定义服务"><a href="#_2-1-定义服务" class="header-anchor">#</a> 2.1 定义服务</h3> <p>为了理解在开发中常用的 Docker Compose 配置，我们通过一个在开发中使用的 Docker Compose 文件来进行下面的讲解。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>version: <span class="token string">&quot;3&quot;</span>
+
+services:
+
+  redis:
+    image: redis:3.2
+    networks:
+      - backend
+    volumes:
+      - ./redis/redis.conf:/etc/redis.conf:ro
+    ports:
+      - <span class="token string">&quot;6379:6379&quot;</span>
+    command: <span class="token punctuation">[</span><span class="token string">&quot;redis-server&quot;</span>, <span class="token string">&quot;/etc/redis.conf&quot;</span><span class="token punctuation">]</span>
+
+  database:
+    image: mysql:5.7
+    networks:
+      - backend
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf:ro
+      - mysql-data:/var/lib/mysql
+    environment:
+      - <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>my-secret-pw
+    ports:
+      - <span class="token string">&quot;3306:3306&quot;</span>
+
+  webapp:
+    build: ./webapp
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./webapp:/webapp
+    depends_on:
+      - redis
+      - database
+
+  nginx:
+    image: nginx:1.12
+    networks:
+      - frontend
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./webapp/html:/webapp/html
+    depends_on:
+      - webapp
+    ports:
+      - <span class="token string">&quot;80:80&quot;</span>
+      - <span class="token string">&quot;443:443&quot;</span>
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  mysql-data:
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p>在这个 Docker Compose 的示例中，我们看到占有大量篇幅的就是 services 部分，也就是服务定义的部分了。在上一节里，我们已经说到了，Docker Compose 中的服务，是对一组相同容器集群统一配置的定义，所以可见，在 Docker Compose 里，主要的内容也是对容器配置的定义。</p> <p>在 Docker Compose 的配置文件里，对服务的定义与我们之前谈到的创建和启动容器中的选项非常相似，或者说 Docker Compose 就是从配置文件中读取出这些内容，代我们创建和管理这些容器的。</p> <p>在使用时，我们首先要为每个服务定义一个名称，用以区别不同的服务。在这个例子里，redis、database、webapp、nginx 就是服务的名称。</p> <h3 id="_2-2-指定镜像"><a href="#_2-2-指定镜像" class="header-anchor">#</a> 2.2 指定镜像</h3> <p>在 Docker Compose 里，我们可以通过两种方式为服务指定所采用的镜像。一种是通过 image 这个配置，这个相对简单，给出能在镜像仓库中找到镜像的名称即可。</p> <p>另外一种指定镜像的方式就是直接采用 Dockerfile 来构建镜像，通过 build 这个配置我们能够定义构建的环境目录，这与 <code>docker build</code> 中的环境目录是同一个含义。如果我们通过这种方式指定镜像，那么 Docker Compose 先会帮助我们执行镜像的构建，之后再通过这个镜像启动容器。</p> <p>当然，在 <code>docker build</code> 里我们还能通过选项定义许多内容，这些在 Docker Compose 里我们依然可以。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">## ......</span>
+  webapp:
+    build:
+      context: ./webapp
+      dockerfile: webapp-dockerfile
+      args:
+        - <span class="token assign-left variable">JAVA_VERSION</span><span class="token operator">=</span><span class="token number">1.6</span>
+<span class="token comment">## ......</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在配置文件里，我们还能用 Map 的形式来定义 build，在这种格式下，我们能够指定更多的镜像构建参数，例如 Dockerfile 的文件名，构建参数等等。</p> <p>当然，对于一些可以不通过重新构建镜像的方式便能修改的内容，我们还是不建议重新构建镜像，而是使用原有的镜像做简单的修改。</p> <p>例如上面的配置里，我们希望修改 Redis 的启动命令，加入配置文件以便对 Redis 服务进行配置，那么我们可以直接通过 command 配置来修改。而在 MySQL 的定义，我们通过 environment 配置为 MySQL 设置了初始密码。</p> <p>这些对镜像的使用方法我们在之前都已经谈到过了，只不过我们之前用的是 Docker Engine 的命令以及其选项来控制的，而在 Docker Compose 里，我们直接通过配置文件来定义它们。</p> <p>由于 Docker Compose 的配置已经固化下来，所以我们不需要担心忘记之前执行了哪些命令来启动容器，当每次需要开启或关闭环境时，只需要 <code>docker-compose up -d</code> 和 <code>docker-compose down</code> 命令，就能轻松完成操作。</p> <h3 id="_2-3-依赖声明"><a href="#_2-3-依赖声明" class="header-anchor">#</a> 2.3 依赖声明</h3> <p>虽然我们在 Docker Compose 的配置文件里定义服务，在书写上有由上至下的先后关系，但实际在容器启动中，由于各种因素的存在，其顺序还是无法保障的。</p> <p>所以，如果我们的服务间有非常强的依赖关系，我们就必须告知 Docker Compose 容器的先后启动顺序。只有当被依赖的容器完全启动后，Docker Compose 才会创建和启动这个容器。</p> <p>定义依赖的方式很简单，在上面的例子里我们已经看到了，也就是 depends_on 这个配置项，我们只需要通过它列出这个服务所有依赖的其他服务即可。在 Docker Compose 为我们启动项目的时候，会检查所有依赖，形成正确的启动顺序并按这个顺序来依次启动容器。</p> <h3 id="_2-4-文件挂载"><a href="#_2-4-文件挂载" class="header-anchor">#</a> 2.4 文件挂载</h3> <p>在 Docker Compose 里定义文件挂载的方式与 Docker Engine 里也并没有太多的区别，使用 volumes 配置可以像 docker CLI 里的 <code>-v</code> 选项一样来指定外部挂载和数据卷挂载。</p> <p>在上面的例子里，我们看到了定义几种常用挂载的方式。我们能够直接挂载宿主机文件系统中的目录，也可以通过数据卷的形式挂载内容。</p> <p>在使用外部文件挂载的时候，我们可以直接指定相对目录进行挂载，这里的相对目录是指相对于 docker-compose.yml 文件的目录。</p> <p>由于有相对目录这样的机制，我们可以将 docker-compose.yml 和所有相关的挂载文件放置到同一个文件夹下，形成一个完整的项目文件夹。这样既可以很好的整理项目文件，也利于完整的进行项目迁移。</p> <p>虽然 Docker 提倡将代码或编译好的程序通过构建镜像的方式打包到镜像里，随整个 CI 流部署到服务器中，但对于开发者来说，每次修改程序进行简单测试都要重新构建镜像简直是浪费生命的操作。所以在开发时，我们推荐直接将代码挂载到容器里，而不是通过镜像构建的方式打包成镜像。</p> <p>同时，在开发过程中，对于程序的配置等内容，我们也建议直接使用文件挂载的形式挂载到容器里，避免经常修改所带来的麻烦。</p> <h3 id="_2-5-使用数据卷"><a href="#_2-5-使用数据卷" class="header-anchor">#</a> 2.5 使用数据卷</h3> <p>如果我们要在项目中使用数据卷来存放特殊的数据，我们也可以让 Docker Compose 自动完成对数据卷的创建，而不需要我们单独进行操作。</p> <p>在上面的例子里，独立于 services 的 volumes 配置就是用来声明数据卷的。定义数据卷最简单的方式仅需要提供数据卷的名称，对于我们在 Docker Engine 中创建数据卷时能够使用的其他定义，也能够放入 Docker Compose 的数据卷定义中。</p> <p>如果我们想把属于 Docker Compose 项目以外的数据卷引入进来直接使用，我们可以将数据卷定义为外部引入，通过 external 这个配置就能完成这个定义。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">## ......</span>
+volumes:
+  mysql-data:
+    external: <span class="token boolean">true</span>
+<span class="token comment">## ......</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在加入 external 定义后，Docker Compose 在创建项目时不会直接创建数据卷，而是优先从 Docker Engine 中已有的数据卷里寻找并直接采用。</p> <h3 id="_2-6-配置网络"><a href="#_2-6-配置网络" class="header-anchor">#</a> 2.6 配置网络</h3> <p>网络也是容器间互相访问的桥梁，所以网络的配置对于多个容器组成的应用系统来说也是非常重要的。在 Docker Compose 里，我们可以为整个应用系统设置一个或多个网络。</p> <p>要使用网络，我们必须先声明网络。声明网络的配置同样独立于 services 存在，是位于根配置下的 networks 配置。在上面的例子里，我们已经看到了声明 frontend 和 backend 这两个网络最简单的方式。</p> <p>除了简单的声明网络名称，让 Docker Compose 自动按默认形式完成网络配置外，我们还可以显式的指定网络的参数。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>networks:
+  frontend:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: <span class="token number">10.10</span>.1.0/24
+<span class="token comment">## ......</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在这里，我们为网络定义了网络驱动的类型，并指定了子网的网段。</p> <h3 id="_2-7-使用网络别名"><a href="#_2-7-使用网络别名" class="header-anchor">#</a> 2.7 使用网络别名</h3> <p>直接使用容器名或服务名来作为连接其他服务的网络地址，因为缺乏灵活性，常常还不能满足我们的需要。这时候我们可以为服务单独设置网络别名，在其他容器里，我们将这个别名作为网络地址进行访问。</p> <p>网络别名的定义方式很简单，这里需要将之前简单的网络 List 定义结构修改成 Map 结构，以便在网络中加入更多的定义。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">## ......</span>
+  database:
+    networks:
+      backend:
+        aliases:
+          - backend.database
+<span class="token comment">## ......</span>
+  webapp:
+    networks:
+      backend:
+        aliases:
+          - backend.webapp
+      frontend:
+        aliases:
+          - frontend.webapp
+<span class="token comment">## ......</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>在我们进行这样的配置后，我们便可以使用这里我们所设置的网络别名对其他容器进行访问了。</p> <h3 id="_2-8-端口映射"><a href="#_2-8-端口映射" class="header-anchor">#</a> 2.8 端口映射</h3> <p>在 Docker Compose 的每个服务配置里，我们还看到了 ports 这个配置项，它是用来定义端口映射的。</p> <p>我们可以利用它进行宿主机与容器端口的映射，这个配置与 docker CLI 中 <code>-p</code> 选项的使用方法是近似的。</p> <p>需要注意的是，由于 YAML 格式对 xx:yy 这种格式的解析有特殊性，在设置小于 60 的值时，会被当成时间而不是字符串来处理，所以我们最好使用引号将端口映射的定义包裹起来，避免歧义。</p> <h2 id="_3-编写项目"><a href="#_3-编写项目" class="header-anchor">#</a> 3.编写项目</h2> <p>通过阅读之前的小节，相信大家对 Docker 在开发中的应用已经有了一定的了解。作为一款实用的软件，我们必须回归到实践中来，这样才能更好地理解 Docker 的实用逻辑和背后的原理。在这一小节里，我们就举一个完整的例子，让大家跟随这个项目的脉络，熟悉如何通过 Docker 和 Docker Compose 来搭建应用开发环境。</p> <h3 id="_3-1-设计目录结构"><a href="#_3-1-设计目录结构" class="header-anchor">#</a> 3.1 设计目录结构</h3> <p>在这一小节里，我们以一个由 MySQL、Redis、PHP-FPM 和 Nginx 组成的小型 PHP 网站为例，介绍通过 Docker 搭建运行这套程序运行环境的方法。</p> <p>既然我们说到这个小型网站是由 MySQL、Redis、PHP-FPM 和 Nginx 四款软件所组成的，那么自然在 Docker 里，我们要准备四个容器分别来运行它们。而为了更好地管理这四个容器所组成的环境，我们这里还会使用到 Docker Compose。</p> <p>与搭建一个软件开发项目类似，我们提倡将 Docker Compose 项目的组成内容聚集到一个文件目录中，这样更利于我们进行管理和迁移。</p> <p>这里我已经建立好了一个目录结构，虽然我们在实践的过程中不一定要按照这样的结构，但我相信这个结构一定对你有所启发。</p> <p>简单说明一下这个结构中主要目录和文件的功能和作用。在这个结构里，我们可以将根目录下的几个目录分为四类：</p> <ul><li>第一类是 Docker 定义目录，也就是 compose 这个目录。在这个目录里，包含了 docker-compose.yml 这个用于定义 Docker Compose 项目的配置文件。此外，还包含了我们用于构建自定义镜像的内容。</li> <li>第二类是程序文件目录，在这个项目里是 mysql、nginx、phpfpm、redis 这四个目录。这些目录分别对应着 Docker Compose 中定义的服务，在其中主要存放对应程序的配置，产生的数据或日志等内容。</li> <li>第三类是代码目录，在这个项目中就是存放 Web 程序的 website 目录。我们将代码统一放在这个目录中，方便在容器中挂载。</li> <li>第四类是工具命令目录，这里指 bin 这个目录。我们在这里存放一些自己编写的命令脚本，我们通过这些脚本可以更简洁地操作整个项目。</li></ul> <h3 id="_3-2-编写配置文件"><a href="#_3-2-编写配置文件" class="header-anchor">#</a> 3.2 编写配置文件</h3> <p>接下来我们就要编写 docker-compose.yml 文件来定义组成这个环境的所有 Docker 容器以及与它们相关的内容了。docker-compose.yml 规则和编写的方法在前两小节中已经谈到，这里我们就不再展开，直接来看看编写好的 docker-compose.yml 配置文件。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>version: <span class="token string">&quot;3&quot;</span>
+
+networks:
+  frontend:
+  backend:
+
+services:
+
+  redis:
+    image: redis:3.2
+    networks:
+      - backend
+    volumes:
+      - <span class="token punctuation">..</span>/redis/redis.conf:/etc/redis/redis.conf:ro
+      - <span class="token punctuation">..</span>/redis/data:/data
+    command: <span class="token punctuation">[</span><span class="token string">&quot;redis-server&quot;</span>, <span class="token string">&quot;/etc/redis/redis.conf&quot;</span><span class="token punctuation">]</span>
+    ports:
+      - <span class="token string">&quot;6379:6379&quot;</span>
+
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
+    volumes:
+      - <span class="token punctuation">..</span>/mysql/my.cnf:/etc/mysql/my.cnf:ro
+      - <span class="token punctuation">..</span>/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    ports:
+      - <span class="token string">&quot;3306:3306&quot;</span>
+
+  phpfpm:
+    build: ./phpfpm
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - <span class="token punctuation">..</span>/phpfpm/php.ini:/usr/local/etc/php/php.ini:ro
+      - <span class="token punctuation">..</span>/phpfpm/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
+      - <span class="token punctuation">..</span>/phpfpm/php-fpm.d:/usr/local/etc/php-fpm.d:ro
+      - <span class="token punctuation">..</span>/phpfpm/crontab:/etc/crontab:ro
+      - <span class="token punctuation">..</span>/website:/website
+    depends_on:
+      - redis
+      - mysql
+
+  nginx:
+    image: nginx:1.12
+    networks:
+      - frontend
+    volumes:
+      - <span class="token punctuation">..</span>/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - <span class="token punctuation">..</span>/nginx/conf.d:/etc/nginx/conf.d:ro
+      - <span class="token punctuation">..</span>/website:/website
+    depends_on:
+      - phpfpm
+    ports:
+      - <span class="token string">&quot;80:80&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p>使用合适的镜像是提高工作效率的途径之一，这里讲解一下我们在这个项目中选择镜像的原由。</p> <p>在这个项目里，我们直接采用了 MySQL、Redis 和 Nginx 三个官方镜像，而对于 PHP-FPM 的镜像，我们需要增加一些功能，所以我们通过 Dockerfile 构建的方式来生成。</p> <p>对于 MySQL 来说，我们需要为它们设置密码，所以原则上我们是需要对它们进行改造并生成新的镜像来使用的。而由于 MySQL 镜像可以通过我们之前在镜像使用方法一节所提到的环境变量配置的方式，来直接指定 MySQL 的密码及其他一些关键性内容，所以我们就无须单独构建镜像，可以直接采用官方镜像并配合使用环境变量来达到目的。</p> <p>对于 Redis 来说，出于安全考虑，我们一样需要设置密码。Redis 设置密码的方法是通过配置文件来完成的，所以我们需要修改 Redis 的配置文件并挂载到 Redis 容器中。这个过程也相对简单，不过需要注意的是，在官方提供的 Redis 镜像里，默认的启动命令是 redis-server，其并没有指定加载配置文件。所以在我们定义 Redis 容器时，要使用 command 配置修改容器的启动命令，使其读取我们挂载到容器的配置文件。</p> <h3 id="_3-3-自定义镜像"><a href="#_3-3-自定义镜像" class="header-anchor">#</a> 3.3 自定义镜像</h3> <p>相比较于 MySQL、Redis 这样可以通过简单配置即可直接使用的镜像不同，PHP 的镜像中缺乏了一些我们程序中必要的元素，而这些部分我们推荐使用自定义镜像的方式将它们加入其中。</p> <p>在这个例子里，因为需要让 PHP 连接到 MySQL 数据库中，所以我们要为镜像中的 PHP 程序安装和开启 pdo_mysql 这个扩展。</p> <p>了解如何安装扩展，这就要考验我们之前在 Docker Hub 镜像使用一节中学到的知识了。我们通过阅读 PHP 镜像的介绍页面，可以找到 PHP 镜像中已经为我们准备好了扩展的安装和启用命令，这让我们可以很轻松地在镜像中加入扩展。</p> <p>在准备好这些使用方法之后，我们就可以开始编写构建 PHP 镜像的 Dockerfile 文件了。这里我已经编写好了一份，供大家参考。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>FROM php:7.2-fpm
+
+MAINTAINER You Ming <span class="token operator">&lt;</span>youming@funcuter.org<span class="token operator">&gt;</span>
+
+RUN <span class="token function">apt-get</span> update <span class="token punctuation">\</span>
+ <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> --no-install-recommends <span class="token function">cron</span>
+
+RUN docker-php-ext-install pdo_mysql
+
+COPY docker-entrypoint.sh /usr/local/bin/
+
+RUN <span class="token function">chmod</span> +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;docker-entrypoint.sh&quot;</span><span class="token punctuation">]</span>
+
+CMD <span class="token punctuation">[</span><span class="token string">&quot;php-fpm&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>由于 Docker 官方所提供的镜像比较精简，所以在这个 Dockerfile 里，我们还执行了 cron 的安装命令，来确保我们可以使用定时任务。</p> <p>大家注意到，这里除了我们进行功能安装外，还将一个脚本拷入了镜像中，并将其作为 ENTRYPOINT 启动入口。这个文件的作用主要是为了启动 cron 服务，以便我们在容器中可以正常使用它。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token function">service</span> <span class="token function">cron</span> start
+
+<span class="token builtin class-name">exec</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在 <a href="http://docker-entrypoint.sh" target="_blank" rel="noopener noreferrer">docker-entrypoint.sh<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 里，除了启动 cron 服务的命令外，我们在脚本的最后看到的是 <code>exec &quot;$@&quot;</code> 这行命令。<code>$@</code> 是 shell 脚本获取参数的符号，这里获得的是所有传入脚本的参数，而 exec 是执行命令，直接执行这些参数。</p> <p>如果直接看这条命令大家会有些疑惑，参数怎么拿来执行，这不是有问题么？</p> <p>请大家回顾一下，我们之前提到的，如果在镜像里同时定义了 ENTRYPOINT 和 CMD 两个指令，CMD 指令的内容会以参数的形式传递给 ENTRYPOINT 指令。所以，这里脚本最终执行的，是 CMD 中所定义的命令。</p> <h3 id="_3-4-目录挂载"><a href="#_3-4-目录挂载" class="header-anchor">#</a> 3.4 目录挂载</h3> <p>在这个例子里，我们会把项目中的一些目录或文件挂载到容器里，这样的挂载主要有三种目的：</p> <ul><li>将程序的配置通过挂载的方式覆盖容器中对应的文件，这让我们可以直接在容器外修改程序的配置，并通过直接重启容器就能应用这些配置；</li> <li>把目录挂载到容器中应用数据的输出目录，就可以让容器中的程序直接将数据输出到容器外，对于 MySQL、Redis 中的数据，程序的日志等内容，我们可以使用这种方法来持久保存它们；</li> <li>把代码或者编译后的程序挂载到容器中，让它们在容器中可以直接运行，这就避免了我们在开发中反复构建镜像带来的麻烦，节省出大量宝贵的开发时间。</li></ul> <p>上述的几种方法，对于线上部署来说都是不适用的，但在我们的开发过程中，却可以为我们免去大量不必要的工作，因此建议在开发中使用这些挂载结构。</p> <h3 id="_3-5-编写辅助脚本"><a href="#_3-5-编写辅助脚本" class="header-anchor">#</a> 3.5 编写辅助脚本</h3> <p>我们知道，虽然 Docker Compose 简化了许多操作流程，但我们还是需要使用 docker-compose 命令来管理项目。对于这个例子来说，我们要启动它就必须使用这样的 docker-compose 命令来管理项目。对于这个例子来说，我们要启动它就必须使用这样的：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> website up <span class="token parameter variable">-d</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>而执行的目录必须是 docker-compose.yml 文件所在的目录，这样才能正确地读取 Docker Compose 项目的配置内容。</p> <p>我编写了一个 compose 脚本，用来简化 docker-compose 的操作命令。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">root</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">cd</span> `dirname $0`<span class="token punctuation">;</span> <span class="token function">dirname</span> `pwd`<span class="token variable">)</span></span>
+<span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> website <span class="token parameter variable">-f</span> <span class="token variable">${root}</span>/compose/docker-compose.yml <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在这个脚本里，我把一些共性的东西包含进去，这样我们就不必每次传入这些参数或选项了。同时，这个脚本还能自适应调用的目录，准确找到 docker-compose.yml 文件，更方便我们直接调用。</p> <p>通过这个脚本来操作项目，我们的命令就可以简化为：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>./bin/compose up <span class="token parameter variable">-d</span>
+./bin/compose logs nginx
+./bin/compose down
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>当然，我们还可以编写像代码部署、服务重启等脚本，来提高我们的开发效率。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zhoubichuan/web-docker/edit/master/src/base/theory/11.compose.md" target="_blank" rel="noopener noreferrer">在github上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/10/22上午8:20:48</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-docker/base/theory/10.desktop.html" class="prev">
+        十.Docker Desktop
+      </a></span> <span class="next"><a href="/web-docker/base/theory/12.service.html">
+        十二.服务化开发
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-docker/assets/js/app.fca22aa8.js" defer></script><script src="/web-docker/assets/js/2.8115ff36.js" defer></script><script src="/web-docker/assets/js/1.47cb7bd0.js" defer></script><script src="/web-docker/assets/js/43.5e9a6e89.js" defer></script><script src="/web-docker/assets/js/19.de37c8cf.js" defer></script>
+  </body>
+</html>
