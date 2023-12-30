@@ -18,6 +18,7 @@ const sidebar = {
     "6.mysql",
     "7.node",
     "8.express",
+    "9.nginx",
   ],
   "/base/theory/": [
     "1.index",
