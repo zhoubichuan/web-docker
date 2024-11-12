@@ -53,7 +53,7 @@ module.exports = {
     `,
   },
   sass: { indentedSyntax: true },
-  dest: "web-javascript", // 指定 vuepress 的输出目录
+  dest: "web-docker", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true, // 代码块显示行号
