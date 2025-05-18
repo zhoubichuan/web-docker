@@ -19,6 +19,7 @@ const sidebar = {
     "7.node",
     "8.express",
     "9.nginx",
+    "10.network"
   ],
   "/base/theory/": [
     "1.index",
@@ -44,6 +45,19 @@ const sidebar = {
     // '21'
   ],
   "/senior/vscode/": [
+    "1.index",
+    "2.extend",
+    "3.componentCommunication",
+    "4.render",
+    "5.api",
+    "6.form",
+    "7.checkBox",
+    "8.active",
+    "9.alert",
+    "10.table",
+    "11.tree",
+  ],
+  "/senior/compose/": [
     "1.index",
     "2.extend",
     "3.componentCommunication",

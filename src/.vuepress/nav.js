@@ -17,11 +17,15 @@ const nav = [
     ],
   },
   {
-    text: '高级知识',
+    text: '高级用法',
     items: [
       {
         text: '一.vscode结合',
         link: '/senior/vscode/1.index'
+      },
+      {
+        text: '二.compose',
+        link: '/senior/compose/1.index'
       },
     ]
   },
