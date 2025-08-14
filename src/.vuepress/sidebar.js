@@ -44,20 +44,20 @@ const sidebar = {
     // '20',
     // '21'
   ],
-  "/senior/vscode/": [
+  "/senior/compose/": [
     "1.index",
     "2.extend",
-    "3.componentCommunication",
-    "4.render",
-    "5.api",
-    "6.form",
-    "7.checkBox",
-    "8.active",
+    "3.dev",
+    "4.sit",
+    "5.uat",
+    "6.pet",
+    "7.sim",
+    "8.prod",
     "9.alert",
     "10.table",
     "11.tree",
   ],
-  "/senior/compose/": [
+  "/senior/vscode/": [
     "1.index",
     "2.extend",
     "3.componentCommunication",
