@@ -13,6 +13,25 @@ services:
       - ${NGINX_VOLUMES_CONFD}:/etc/nginx/conf.d
       - ${NGINX_VOLUMES_CONF}:/etc/nginx/nginx.conf
 
+  # --------> MY-AUTH-Server <--------
+  my-auth-server:
+    build:
+      context: ./
+      dockerfile: ./node.dockerfile
+    image: my-auth-server
+    container_name: my-auth-server
+    restart: unless-stopped
+    working_dir: /usr/src
+    env_file: .env
+    ports:
+      - ${SERVER_PORT}:4000
+    volumes:
+      - my-app-volume:/usr
+    networks:
+      - my-network
+    stdin_open: true
+    tty: true
+    
   # --------> MY-APP-Server <--------
   my-app:
     build:
@@ -31,7 +50,7 @@ services:
       - my-network
     stdin_open: true
     tty: true
-    
+
   # --------> MY-APP-Server <--------
   rabbitmq:
     image: 'rabbitmq:3.12.6-management'
