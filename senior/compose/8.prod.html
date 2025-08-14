@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>prod | Docker 学习笔记</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/web-docker/home.png">
+    <link rel="manifest" href="/web-docker/manifest.json">
+    <script src="/web-docker/dll/vendor.dll.js"></script>
+    <script src="https://webapi.amap.com/maps?v=2.0&amp;key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8"></script>
+    <script src="https://webapi.amap.com/ui/1.1/main.js?v=1.1.1"></script>
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-docker/assets/css/0.styles.43bd6768.css" as="style"><link rel="preload" href="/web-docker/assets/js/app.9237d233.js" as="script"><link rel="preload" href="/web-docker/assets/js/2.3ce16d38.js" as="script"><link rel="preload" href="/web-docker/assets/js/1.087005ed.js" as="script"><link rel="preload" href="/web-docker/assets/js/71.6bffcd60.js" as="script"><link rel="preload" href="/web-docker/assets/js/19.a80fcc79.js" as="script"><link rel="prefetch" href="/web-docker/assets/js/10.696b0995.js"><link rel="prefetch" href="/web-docker/assets/js/11.82e861e6.js"><link rel="prefetch" href="/web-docker/assets/js/12.34af7789.js"><link rel="prefetch" href="/web-docker/assets/js/13.e31ead39.js"><link rel="prefetch" href="/web-docker/assets/js/14.09d95819.js"><link rel="prefetch" href="/web-docker/assets/js/15.fd30a705.js"><link rel="prefetch" href="/web-docker/assets/js/16.249606b8.js"><link rel="prefetch" href="/web-docker/assets/js/17.c1715703.js"><link rel="prefetch" href="/web-docker/assets/js/18.2b6277e7.js"><link rel="prefetch" href="/web-docker/assets/js/20.35cfbca0.js"><link rel="prefetch" href="/web-docker/assets/js/21.d8756a17.js"><link rel="prefetch" href="/web-docker/assets/js/22.ab12cd04.js"><link rel="prefetch" href="/web-docker/assets/js/23.bd376c61.js"><link rel="prefetch" href="/web-docker/assets/js/24.b1824603.js"><link rel="prefetch" href="/web-docker/assets/js/25.9c9fcfb8.js"><link rel="prefetch" href="/web-docker/assets/js/26.a7111042.js"><link rel="prefetch" href="/web-docker/assets/js/27.bcc69e73.js"><link rel="prefetch" href="/web-docker/assets/js/28.291d074a.js"><link rel="prefetch" href="/web-docker/assets/js/29.349bfae0.js"><link rel="prefetch" href="/web-docker/assets/js/3.5da37471.js"><link rel="prefetch" href="/web-docker/assets/js/30.7b0d7ba8.js"><link rel="prefetch" href="/web-docker/assets/js/31.f2bd1fd4.js"><link rel="prefetch" href="/web-docker/assets/js/32.076b5561.js"><link rel="prefetch" href="/web-docker/assets/js/33.3744f724.js"><link rel="prefetch" href="/web-docker/assets/js/34.d82511af.js"><link rel="prefetch" href="/web-docker/assets/js/35.478f59b4.js"><link rel="prefetch" href="/web-docker/assets/js/36.bb75268e.js"><link rel="prefetch" href="/web-docker/assets/js/37.eedce484.js"><link rel="prefetch" href="/web-docker/assets/js/38.8411bc03.js"><link rel="prefetch" href="/web-docker/assets/js/39.656a7f4c.js"><link rel="prefetch" href="/web-docker/assets/js/4.79faaf3d.js"><link rel="prefetch" href="/web-docker/assets/js/40.21f71c1a.js"><link rel="prefetch" href="/web-docker/assets/js/41.9cd1bb9e.js"><link rel="prefetch" href="/web-docker/assets/js/42.a1fb836b.js"><link rel="prefetch" href="/web-docker/assets/js/43.b8efe1a7.js"><link rel="prefetch" href="/web-docker/assets/js/44.dd06479f.js"><link rel="prefetch" href="/web-docker/assets/js/45.f1e2d2ae.js"><link rel="prefetch" href="/web-docker/assets/js/46.03f0e373.js"><link rel="prefetch" href="/web-docker/assets/js/47.57d4aeff.js"><link rel="prefetch" href="/web-docker/assets/js/48.432775c0.js"><link rel="prefetch" href="/web-docker/assets/js/49.6d097fd0.js"><link rel="prefetch" href="/web-docker/assets/js/5.1519d464.js"><link rel="prefetch" href="/web-docker/assets/js/50.50994d16.js"><link rel="prefetch" href="/web-docker/assets/js/51.b42a58af.js"><link rel="prefetch" href="/web-docker/assets/js/52.8238b2f3.js"><link rel="prefetch" href="/web-docker/assets/js/53.2dc73759.js"><link rel="prefetch" href="/web-docker/assets/js/54.91789fac.js"><link rel="prefetch" href="/web-docker/assets/js/55.7a332527.js"><link rel="prefetch" href="/web-docker/assets/js/56.7886e293.js"><link rel="prefetch" href="/web-docker/assets/js/57.3edeb64e.js"><link rel="prefetch" href="/web-docker/assets/js/58.44ebb055.js"><link rel="prefetch" href="/web-docker/assets/js/59.f1aef9d6.js"><link rel="prefetch" href="/web-docker/assets/js/6.c92edc86.js"><link rel="prefetch" href="/web-docker/assets/js/60.b555ef93.js"><link rel="prefetch" href="/web-docker/assets/js/61.24a7281b.js"><link rel="prefetch" href="/web-docker/assets/js/62.d229aa89.js"><link rel="prefetch" href="/web-docker/assets/js/63.56d9f32f.js"><link rel="prefetch" href="/web-docker/assets/js/64.24f4c29f.js"><link rel="prefetch" href="/web-docker/assets/js/65.6bb78df3.js"><link rel="prefetch" href="/web-docker/assets/js/66.9f3d5ad6.js"><link rel="prefetch" href="/web-docker/assets/js/67.05fe6673.js"><link rel="prefetch" href="/web-docker/assets/js/68.b8b21d4f.js"><link rel="prefetch" href="/web-docker/assets/js/69.13eee791.js"><link rel="prefetch" href="/web-docker/assets/js/7.fce53994.js"><link rel="prefetch" href="/web-docker/assets/js/70.7166f330.js"><link rel="prefetch" href="/web-docker/assets/js/72.69ab3d4f.js"><link rel="prefetch" href="/web-docker/assets/js/73.0efb0717.js"><link rel="prefetch" href="/web-docker/assets/js/74.831692fc.js"><link rel="prefetch" href="/web-docker/assets/js/75.f7f41d48.js"><link rel="prefetch" href="/web-docker/assets/js/76.13c1a24b.js"><link rel="prefetch" href="/web-docker/assets/js/77.138564dd.js"><link rel="prefetch" href="/web-docker/assets/js/78.e4639210.js"><link rel="prefetch" href="/web-docker/assets/js/79.9435bbe9.js"><link rel="prefetch" href="/web-docker/assets/js/80.114446cd.js"><link rel="prefetch" href="/web-docker/assets/js/81.5a2b52be.js"><link rel="prefetch" href="/web-docker/assets/js/82.23f9763b.js"><link rel="prefetch" href="/web-docker/assets/js/83.5c76a8ba.js"><link rel="prefetch" href="/web-docker/assets/js/84.134b799d.js"><link rel="prefetch" href="/web-docker/assets/js/85.03347edc.js"><link rel="prefetch" href="/web-docker/assets/js/86.7b14c372.js"><link rel="prefetch" href="/web-docker/assets/js/87.d5fc2190.js"><link rel="prefetch" href="/web-docker/assets/js/88.e73b0b4f.js"><link rel="prefetch" href="/web-docker/assets/js/89.a86522c0.js"><link rel="prefetch" href="/web-docker/assets/js/90.4786fb01.js"><link rel="prefetch" href="/web-docker/assets/js/91.e794c3b9.js"><link rel="prefetch" href="/web-docker/assets/js/92.d8b6b43f.js"><link rel="prefetch" href="/web-docker/assets/js/vendors~docsearch.4f61d20c.js">
+    <link rel="stylesheet" href="/web-docker/assets/css/0.styles.43bd6768.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-docker/" class="home-link router-link-active"><!----> <span class="site-name">Docker 学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/base/desktop/1.index.html" class="nav-link">
+  一.桌面版实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/command/1.index.html" class="nav-link">
+  二.命令实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/theory/1.index.html" class="nav-link">
+  三.理论基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级用法" class="dropdown-title"><span class="title">高级用法</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级用法" class="mobile-dropdown-title"><span class="title">高级用法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/senior/vscode/1.index.html" class="nav-link">
+  一.vscode结合
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/senior/compose/1.index.html" class="nav-link">
+  二.compose
+</a></li></ul></div></div> <a href="https://gitee.com/zhoubichuan/web-docker" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/base/desktop/1.index.html" class="nav-link">
+  一.桌面版实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/command/1.index.html" class="nav-link">
+  二.命令实践
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/base/theory/1.index.html" class="nav-link">
+  三.理论基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级用法" class="dropdown-title"><span class="title">高级用法</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级用法" class="mobile-dropdown-title"><span class="title">高级用法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-docker/senior/vscode/1.index.html" class="nav-link">
+  一.vscode结合
+</a></li><li class="dropdown-item"><!----> <a href="/web-docker/senior/compose/1.index.html" class="nav-link">
+  二.compose
+</a></li></ul></div></div> <a href="https://gitee.com/zhoubichuan/web-docker" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/web-docker/senior/compose/1.index.html" class="sidebar-link">项目开发</a></li><li><a href="/web-docker/senior/compose/2.extend.html" class="sidebar-link">启动数据库</a></li><li><a href="/web-docker/senior/compose/3.dev.html" class="sidebar-link">dev</a></li><li><a href="/web-docker/senior/compose/4.sit.html" class="sidebar-link">sit</a></li><li><a href="/web-docker/senior/compose/5.uat.html" class="sidebar-link">uat</a></li><li><a href="/web-docker/senior/compose/6.pet.html" class="sidebar-link">pet</a></li><li><a href="/web-docker/senior/compose/7.sim.html" class="sidebar-link">sim</a></li><li><a href="/web-docker/senior/compose/8.prod.html" aria-current="page" class="active sidebar-link">prod</a></li><li><a href="/web-docker/senior/compose/9.alert.html" class="sidebar-link">项目一</a></li><li><a href="/web-docker/senior/compose/10.table.html" class="sidebar-link">项目一</a></li><li><a href="/web-docker/senior/compose/11.tree.html" class="sidebar-link">项目一</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="prod"><a href="#prod" class="header-anchor">#</a> prod</h1> <div class="custom-block tip"><p class="custom-block-title">需求场景</p> <p>现在我需要用 docker compose 来部署</p> <ul><li>mysql8(3306 端口)username=root,password=123456</li> <li>redis6(无密码，6379端口)、</li> <li>rabbitmq v.3.12.6(5672端口 password: guest,username:guest)、</li> <li>nacos2.2.0(8848端口);</li></ul> <p>还有4个本地的springboot服务(名称分别为:</p> <ul><li>yuoj-backend-user-service 8102端口、</li> <li>yuoj-backend-question-service 8103端口、</li> <li>yuoj-backend-judge-service8104端口、</li> <li>yuoj-backend-gateway8101端口)，每个服务本地目录都有一个Dockerfile，请帮我自动生成dockercompose的yml配置文件，要求这些服务网络能够连通</li></ul></div> <p>梳理服务部署表格</p> <table><thead><tr><th>服务名称</th> <th>英文名</th> <th>端口号</th> <th>版本号</th> <th>服务类别</th></tr></thead> <tbody><tr><td>数据库</td> <td>mysql</td> <td>3306</td> <td>v8</td> <td>环境依赖</td></tr> <tr><td>缓存</td> <td>redis</td> <td>63791</td> <td>v6</td> <td>环境依赖</td></tr> <tr><td>消息队列</td> <td>rabbitmq</td> <td>5672,15672</td> <td>v3.12.6</td> <td>环境依赖</td></tr> <tr><td>注册中心</td> <td>nacos</td> <td>8848</td> <td>v2.2.0</td> <td>环境依赖</td></tr> <tr><td>网关服务</td> <td>gateway</td> <td>8101</td> <td>java8</td> <td>业务服务</td></tr> <tr><td>用户服务</td> <td>user-service</td> <td>8102</td> <td>java8</td> <td>业务服务</td></tr></tbody></table> <ul><li>docker-compose</li></ul> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">dev-nginx</span><span class="token punctuation">:</span> <span class="token comment"># 服务的名称</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest <span class="token comment"># 指定了服务所使用的 Docker 镜像</span>
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span> .env
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span> <span class="token comment"># 指定了服务的端口映射关系</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;${NGINX_PORT}:83&quot;</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span> <span class="token comment"># 指定了服务的卷挂载配置</span>
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>NGINX_VOLUMES_HTML<span class="token punctuation">}</span><span class="token punctuation">:</span>/usr/share/nginx/html
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>NGINX_VOLUMES_CONFD<span class="token punctuation">}</span><span class="token punctuation">:</span>/etc/nginx/conf.d
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>NGINX_VOLUMES_CONF<span class="token punctuation">}</span><span class="token punctuation">:</span>/etc/nginx/nginx.conf
+
+  <span class="token comment"># --------&gt; MY-APP-Server &lt;--------</span>
+  <span class="token key atrule">my-app</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> ../
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> ./.docker/node.dockerfile
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">working_dir</span><span class="token punctuation">:</span> /usr/src
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span> .env
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>SERVER_PORT<span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token number">4000</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>app<span class="token punctuation">-</span>volume<span class="token punctuation">:</span>/usr
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>network
+    <span class="token key atrule">stdin_open</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">tty</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># --------&gt; MY-APP-Server &lt;--------</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">'rabbitmq:3.12.6-management'</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> rabbitmq_service
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'5672:5672'</span>
+      <span class="token punctuation">-</span> <span class="token string">'15672:15672'</span> <span class="token comment"># 管理界面端口</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">RABBITMQ_DEFAULT_USER</span><span class="token punctuation">:</span> <span class="token string">'guest'</span>
+      <span class="token key atrule">RABBITMQ_DEFAULT_PASS</span><span class="token punctuation">:</span> <span class="token string">'guest'</span>
+  <span class="token comment"># --------&gt; MY-APP-Server &lt;--------</span>
+  <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">'nacos/nacos-server:2.2.0'</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nacos_service
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'8848:8848'</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MODE=standalone
+
+  <span class="token comment"># --------&gt; MY-APP-MONGODB &lt;--------</span>
+  <span class="token key atrule">my-mongo</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mongo<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>mongo
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> .env
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">DB_PASS</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>DB_PASS<span class="token punctuation">}</span>
+      <span class="token key atrule">DB_USER</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>DB_USER<span class="token punctuation">}</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>network
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>DB_PORT<span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token number">27017</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>mongodb<span class="token punctuation">-</span>volume<span class="token punctuation">:</span>/data/db
+
+
+  <span class="token comment"># --------&gt; MY-APP-MYSQL &lt;--------</span>
+  <span class="token key atrule">my-mysql</span><span class="token punctuation">:</span>
+    <span class="token comment"># image: 'mysql:8'</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql_service
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>default<span class="token punctuation">-</span>authentication<span class="token punctuation">-</span>plugin=mysql_native_password
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'${MYSQL_DB_PORT}:3306'</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>mysql<span class="token punctuation">-</span>volume<span class="token punctuation">:</span>/var/lib/mysql
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>network
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> .env
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">MYSQL_ROOT_PASSWORD</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>MYSQL_ROOT_PASSWORD<span class="token punctuation">}</span>
+      <span class="token key atrule">MYSQL_DATABASE</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>MYSQL_DATABASE<span class="token punctuation">}</span> <span class="token comment"># 可选，初始化数据库名</span>
+      <span class="token key atrule">MYSQL_USER</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>MYSQL_USER<span class="token punctuation">}</span>
+      <span class="token key atrule">MYSQL_PASSWORD</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>MYSQL_PASSWORD<span class="token punctuation">}</span>
+
+
+  <span class="token comment"># --------&gt; MY-APP-REDIS &lt;--------</span>
+  <span class="token key atrule">my-redis</span><span class="token punctuation">:</span>
+    <span class="token comment"># image: 'redis:6'</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token string">&quot;bitnami/redis:latest&quot;</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>redis
+    <span class="token key atrule">user</span><span class="token punctuation">:</span> <span class="token string">&quot;root&quot;</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ALLOW_EMPTY_PASSWORD</span><span class="token punctuation">:</span> <span class="token string">&quot;yes&quot;</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my<span class="token punctuation">-</span>network
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> .env
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>REDIS_PORT<span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> $<span class="token punctuation">{</span>REDIS_PASS<span class="token punctuation">}</span>/my<span class="token punctuation">-</span>redis<span class="token punctuation">:</span>/bitnami/redis
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my-network</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>network
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my-app-volume</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my-mongodb-volume</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my-mysql-volume</span><span class="token punctuation">:</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/zhoubichuan/web-docker/edit/master/src/senior/compose/8.prod.md" target="_blank" rel="noopener noreferrer">在gitee上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2025/8/14下午4:28:00</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-docker/senior/compose/7.sim.html" class="prev">
+        sim
+      </a></span> <span class="next"><a href="/web-docker/senior/compose/9.alert.html">
+        项目一
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-docker/assets/js/app.9237d233.js" defer></script><script src="/web-docker/assets/js/2.3ce16d38.js" defer></script><script src="/web-docker/assets/js/1.087005ed.js" defer></script><script src="/web-docker/assets/js/71.6bffcd60.js" defer></script><script src="/web-docker/assets/js/19.a80fcc79.js" defer></script>
+  </body>
+</html>
