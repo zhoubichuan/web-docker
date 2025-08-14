@@ -53,9 +53,9 @@ const sidebar = {
     "6.pet",
     "7.sim",
     "8.prod",
-    "9.alert",
-    "10.table",
-    "11.tree",
+    "9.genkins",
+    "10.gitlab",
+    "11.verdaccio",
   ],
   "/senior/vscode/": [
     "1.index",

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts #选择最新的长期维护版本即可
+    container_name: jenkins-docker #容器名称
+    restart: always #
+    privileged: true # 启用权限以便容器内能使用 docker
+    user: root  # 避免权限问题
+    ports:
+      - "8080:8080"   # Web UI 端口映射
+      - "50000:50000" # Agent 连接端口
+    volumes:
+      - ./jenkins_home:/var/jenkins_home  # 数据持久化
+      - /var/run/docker.sock:/var/run/docker.sock # 宿主机docker控制
+      - /usr/bin/docker:/usr/bin/docker   # 宿主机docker命令‘
+    environment:
+      - TZ=Asia/Shanghai  # 时区设置
