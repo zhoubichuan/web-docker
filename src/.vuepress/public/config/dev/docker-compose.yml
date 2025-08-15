@@ -17,7 +17,7 @@ services:
   my-auth-server:
     build:
       context: ./
-      dockerfile: ./node.dockerfile
+      dockerfile: ./abstract-express.dockerfile
     image: my-auth-server
     container_name: my-auth-server
     restart: unless-stopped
@@ -36,7 +36,7 @@ services:
   my-app:
     build:
       context: ./
-      dockerfile: ./node.dockerfile
+      dockerfile: ./abstract-express.dockerfile
     image: my-app
     container_name: my-app
     restart: unless-stopped
