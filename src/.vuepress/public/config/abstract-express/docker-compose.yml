@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  # --------> MY-APP-Server <--------
+  # --------> abstract-express-server <--------
   abstract-express:
     build:
       context: ./
@@ -15,15 +15,8 @@ services:
       - ${SERVER_PORT}:7001
     volumes:
       - abstract-express-volume:/usr
-    networks:
-      - my-network
     stdin_open: true
     tty: true
-
-networks:
-  my-network:
-    external:
-      name: my-network
 
 volumes:
   abstract-express-volume:
