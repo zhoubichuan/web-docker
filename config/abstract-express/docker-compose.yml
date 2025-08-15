@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # --------> MY-APP-Server <--------
+  abstract-express:
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    image: abstract-express
+    container_name: abstract-express
+    restart: unless-stopped
+    working_dir: /usr/src
+    env_file: .env
+    ports:
+      - ${SERVER_PORT}:7001
+    volumes:
+      - abstract-express-volume:/usr
+    networks:
+      - my-network
+    stdin_open: true
+    tty: true
+
+networks:
+  my-network:
+    external:
+      name: my-network
+
+volumes:
+  abstract-express-volume:
